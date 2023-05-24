@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
-
-    const cartItems = useSelector((state)=>state.cart)
+  const counterValue = useSelector((state)=> state.cart.totalCartData)
+    // const cartItems = useSelector((state)=>state.cart)
     // console.log(cartItems)
 
 
@@ -18,7 +18,7 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={NavLink} to={"/"}>Home</Nav.Link>
-            <Nav.Link as={NavLink} to={"/cart"}>My Cart ({cartItems.length})</Nav.Link>
+            <Nav.Link as={NavLink} to={"/cart"}>My Cart ({counterValue})</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

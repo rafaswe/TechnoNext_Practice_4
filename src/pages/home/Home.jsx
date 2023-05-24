@@ -8,7 +8,7 @@ const Home = () => {
     
     const {data,status} = useSelector((state)=> state.product);
     // const product = selector.product;
-    console.log(data);
+    // console.log(data);
     const dispatch = useDispatch();
 
 

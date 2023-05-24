@@ -5,7 +5,7 @@ import SingleCartItem from './SingleCartItem'
 
 const Cart = () => {
 
-    const cartItems = useSelector((state)=>state.cart)
+    const cartItems = useSelector((state)=>state.cart.cartData)
     // console.log(cartItems)
 
 
@@ -15,9 +15,16 @@ const Cart = () => {
         <div className="row">
             <div className="col-12 ">
                 {
-                    cartItems.map((product,index)=>(
-                        <SingleCartItem key={index} cartProduct={product}/>
-                    ))}
+
+                    cartItems.length==0? (
+                        <h4 className='text-center mt-3'>No Product in the cart</h4>
+                    ):(
+                        cartItems.map((product,index)=>(
+                            <SingleCartItem key={index} cartProduct={product}/>
+                        ))
+                    )
+
+                    }
             </div>
         </div>
     </Container>
